@@ -104,7 +104,7 @@ angular.module('gservice', [])
 
                 // Create a new map and place in the index.html page
                 var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 3,
+                    zoom: 15,
                     center: myLatLng
                 });
             }
