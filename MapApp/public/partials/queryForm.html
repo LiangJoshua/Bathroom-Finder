@@ -6,7 +6,7 @@
 
         <!-- Panel Title -->
         <div class="panel-heading">
-            <h2 class="panel-title text-center">Find Teammates! (Map Query) <span class="glyphicon glyphicon-search"></span></h2>
+            <h2 class="panel-title text-center">Find Bathrooms!<span class="glyphicon glyphicon-search"></span></h2>
         </div>
 
         <!-- Panel Body -->
@@ -40,22 +40,6 @@
                         <input type="checkbox" name="optionsRadios" id="checkfemale" value="Female" ng-model="formData.female" ng-true-value="'Female'">
                         Female
                     </label>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" name="optionsRadios" id="checkother" value="What's it to ya?" ng-model="formData.other" ng-true-value="'What\'s it to ya?'">
-                        What's it to ya?
-                    </label>
-                </div>
-                <div class="form-group">
-                    <label for="minage">Min. Age</label>
-                    <input type="number" class="form-control" id="minage" placeholder="5" ng-model="formData.minage">
-                </div>
-                <div class="form-group">
-                    <label for="maxage">Max Age</label>
-                    <input type="number" class="form-control" id="maxage" placeholder="80" ng-model="formData.maxage">
-                </div>
-                <div class="form-group">
-                    <label for="favlang">Favorite Language</label>
-                    <input type="text" class="form-control" id="favlang" placeholder="Fortran" ng-model="formData.favlang">
                 </div>
                 <div class="form-group">
                     <div class="checkbox">
@@ -72,7 +56,7 @@
 
         <!-- Footer panel for displaying count. Note how it will only display if queryCount is greater than 0 -->
         <div ng-show="queryCount>0" class="panel-footer">
-            <p class="text-center">Hot Dang! We Found {{queryCount}} Teammates.</p>
+            <p class="text-center">We Found {{queryCount}} Bathrooms!</p>
         </div>
     </div>
 </div>

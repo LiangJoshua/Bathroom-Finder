@@ -50,9 +50,6 @@ module.exports = function(app) {
         var male            = req.body.male;
         var female          = req.body.female;
         var other           = req.body.other;
-        var minAge          = req.body.minAge;
-        var maxAge          = req.body.maxAge;
-        var favLang         = req.body.favlang;
         var reqVerified     = req.body.reqVerified;
 
         // Opens a generic Mongoose Query. Depending on the post body we will...
@@ -74,20 +71,7 @@ module.exports = function(app) {
             query.or([{ 'gender': male }, { 'gender': female }, {'gender': other}]);
         }
 
-        // ...include filter by Min Age
-        if(minAge){
-            query = query.where('age').gte(minAge);
-        }
-
-        // ...include filter by Max Age
-        if(maxAge){
-            query = query.where('age').lte(maxAge);
-        }
-
-        // ...include filter by Favorite Language
-        if(favLang){
-            query = query.where('favlang').equals(favLang);
-        }
+        
 
         // ...include filter for HTML5 Verified Locations
         if(reqVerified){

@@ -40,9 +40,6 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geol
             male: $scope.formData.male,
             female: $scope.formData.female,
             other: $scope.formData.other,
-            minAge: $scope.formData.minage,
-            maxAge: $scope.formData.maxage,
-            favlang: $scope.formData.favlang,
             reqVerified: $scope.formData.verified
         };
 
