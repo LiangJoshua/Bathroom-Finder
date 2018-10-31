@@ -9,9 +9,9 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
     var lat = 0;
     var long = 0;
 
-    // Set initial coordinates to the center of the US
+    // Set initial coordinates to the downtown SJ
     $scope.formData.latitude = 37.3351;
-    $scope.formData.longitude = 121.8929;
+    $scope.formData.longitude = -121.8929;
 
     geolocation.getLocation().then(function(data){
 
@@ -24,7 +24,7 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
 
 
 
-        gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
+        
 
     });
 
@@ -47,7 +47,7 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
         var userData = {
             username: $scope.formData.username,
             gender: $scope.formData.gender,
-            location: [$scope.formData.longitude, $scope.formData.latitude],
+            location: [$scope.formData.longitude, $scope.formData.latitude]
         };
 
         // Saves the user data to the db
