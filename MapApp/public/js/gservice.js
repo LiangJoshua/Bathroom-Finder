@@ -75,6 +75,7 @@ angular.module('gservice', [])
                 var  contentString =
                     '<p><b>Username</b>: ' + user.username +
                     '<br><b>Gender</b>: ' + user.gender +
+		    '<br><a href="https://maps.google.com/?ll=latitude,longitude" target="_blank">Navigate</a> ' + 
                     '</p>';
 
                 // Converts each of the JSON records into Google Maps Location format (Note [Lat, Lng] format).
