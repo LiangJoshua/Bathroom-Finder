@@ -15,8 +15,8 @@ angular.module('gservice', [])
         var currentSelectedMarker;
 
         // Selected Location (initialize to center of America)
-        var selectedLat = 39.50;
-        var selectedLong = -98.35;
+        var selectedLat = 37.3351;
+        var selectedLong = -121.8929;
 
         // Handling Clicks and location selection
         googleMapService.clickLat  = 0;
