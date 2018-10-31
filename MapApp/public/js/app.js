@@ -4,16 +4,16 @@ var app = angular.module('meanMapApp', ['addCtrl', 'queryCtrl', 'geolocation', '
     // Configures Angular routing -- showing the relevant view and controller when needed.
     .config(function($routeProvider){
 
-        // Join Team Control Panel
-        $routeProvider.when('/join', {
+        // Add Bathroom Control Panel
+        $routeProvider.when('/add', {
             controller: 'addCtrl',
             templateUrl: 'partials/addForm.html',
 
-            // Find Teammates Control Panel
+            // Find Bathrooms Control Panel
         }).when('/find', {
             controller: 'queryCtrl',
             templateUrl: 'partials/queryForm.html',
 
-            // All else forward to the Join Team Control Panel
+            // All else forward to the Find Bathroom Control Panel
         }).otherwise({redirectTo:'/find'})
     });
