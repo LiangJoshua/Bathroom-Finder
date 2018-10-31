@@ -15,5 +15,5 @@ var app = angular.module('meanMapApp', ['addCtrl', 'queryCtrl', 'geolocation', '
             templateUrl: 'partials/queryForm.html',
 
             // All else forward to the Find Bathroom Control Panel
-        }).otherwise({redirectTo:'/find'})
+        }).otherwise({redirectTo:'/add'})
     });
