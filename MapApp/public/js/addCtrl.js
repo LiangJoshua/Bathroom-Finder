@@ -6,12 +6,12 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
     // ----------------------------------------------------------------------------
     $scope.formData = {};
     var coords = {};
-    var lat = 39.500;
-    var long = -98.350;
+    var lat = 0;
+    var long = 0;
 
     // Set initial coordinates to the center of the US
-    $scope.formData.latitude = 39.500;
-    $scope.formData.longitude = -98.350;
+    $scope.formData.latitude = 37.3351;
+    $scope.formData.longitude = 121.8929;
 
     geolocation.getLocation().then(function(data){
 
