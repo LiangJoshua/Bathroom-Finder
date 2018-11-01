@@ -49,6 +49,7 @@ module.exports = function(app) {
         var distance        = req.body.distance;
         var male            = req.body.male;
         var female          = req.body.female;
+	var unisex          = req.body.unisex;
         var other           = req.body.other;
         var reqVerified     = req.body.reqVerified;
 
@@ -67,8 +68,8 @@ module.exports = function(app) {
         }
 
         // ...include filter by Gender (all options)
-        if(male || female || other){
-            query.or([{ 'gender': male }, { 'gender': female }, {'gender': other}]);
+        if(male || female || unisex){
+            query.or([{ 'gender': male }, { 'gender': female }, {'gender': unisex}]);
         }
 
         

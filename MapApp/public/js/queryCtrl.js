@@ -39,6 +39,7 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geol
             distance: parseFloat($scope.formData.distance),
             male: $scope.formData.male,
             female: $scope.formData.female,
+unisex: $scope.formData.unisex,
             other: $scope.formData.other,
             reqVerified: $scope.formData.verified
         };
