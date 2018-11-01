@@ -75,14 +75,11 @@ angular.module('gservice', [])
         var navigate = "https://www.google.com/maps/search/?api=1&query=" + user.location[1] + "," + user.location[0];
         var nav = "Navigate";
 
-        function myFunction() {
-          window.open("https://www.w3schools.com");
-        }
         var contentString =
           '<p><b>Username</b>: ' + user.username +
           '<br><b>Gender</b>: ' + user.gender +
           '<br>' +
-          nav.link(navigate) +
+          '<a href="' + navigate + '" target="_blank">Navigate</a>' +
           '</p>';
 
         // Converts each of the JSON records into Google Maps Location format (Note [Lat, Lng] format).
