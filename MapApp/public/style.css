@@ -16,3 +16,6 @@ input:invalid + span:after {
 #rating{
   width: 43%;
 }
+.linkless{
+  text-decoration: none;
+}
