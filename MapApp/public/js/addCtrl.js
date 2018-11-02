@@ -10,8 +10,8 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
     var long = 0;
 
     // Set initial coordinates to the downtown SJ
-    $scope.formData.latitude = 37.3351;
-    $scope.formData.longitude = -121.8929;
+    // $scope.formData.latitude = 37.3351;
+    // $scope.formData.longitude = -121.8929;
 
     geolocation.getLocation().then(function(data){
 
@@ -56,7 +56,7 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
                 // Once complete, clear the form (except location)
                 $scope.formData.username = "";
                 $scope.formData.gender = "";
-                $scope.formData.rating = ""; 
+                $scope.formData.rating = "";
 
                 // Refresh the map with new data
                 gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
