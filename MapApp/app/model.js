@@ -6,7 +6,7 @@ var Schema      = mongoose.Schema;
 var UserSchema = new Schema({
     username: {type: String, required: true},
     gender: {type: String, required: true},
-    rating: {type: String, required: true}, // the type might have to be int
+    rating: {type: Number, required: true}, 
     location: {type: [Number], required: true}, // [Long, Lat]
     created_at: {type: Date, default: Date.now},
     updated_at: {type: Date, default: Date.now}
