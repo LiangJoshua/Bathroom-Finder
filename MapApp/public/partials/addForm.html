@@ -20,63 +20,41 @@
           <label for="username">Bathroom Name <span class="badge">All fields required</span></label>
           <input type="text" class="form-control" id="username" placeholder="Jack in the Box" ng-model="formData.username" required>
         </div>
-        <label class="radio control-label">Bathroom Gender-type</label>
-        <div class="radio">
-          <label>
+        <label>Bathroom Gender-type</label>
+        <div class="form-group" required>
+          <label class="radio-inline">
             <input type="radio" name="optionsRadios" id="radiomale" value="Male" ng-model="formData.gender">
             Male
           </label>
-        </div>
-        <div class="radio" required>
-          <label>
+
+
+          <label class="radio-inline">
             <input type="radio" name="optionsRadios" id="radiofemale" value="Female" ng-model="formData.gender">
             Female
           </label>
-        </div>
-        <div class="radio" required>
-          <label>
+
+
+          <label class="radio-inline">
             <input type="radio" name="optionsRadios" id="radiounisex" value="Unisex" ng-model="formData.gender">
             Unisex
           </label>
+
         </div>
-        <label class="radio control-label">Bathroom Rating</label>
-        <div class="radio">
-          <label>
-            <input type="radio" name="optionsRadios" id="radio1" value="1" ng-model="formData.rating">
-            1
-          </label>
+
+
+        <div class="form-group" required>
+          <label for="rating">Bathroom Rating</label>
+          <input type="number" id="rating" name="rating" ng-model="formData.rating" placeholder="Min: 1, max: 5" min="1" max="5" />
+          <span class="validity"></span>
         </div>
-        <div class="radio" required>
-          <label>
-            <input type="radio" name="optionsRadios" id="radio2" value="2" ng-model="formData.rating">
-            2
-          </label>
-        </div>
-        <div class="radio" required>
-          <label>
-            <input type="radio" name="optionsRadios" id="radio3" value="3" ng-model="formData.rating">
-            3
-          </label>
-        </div>
-        <div class="radio" required>
-          <label>
-            <input type="radio" name="optionsRadios" id="radio4" value="4" ng-model="formData.rating">
-            4
-          </label>
-          <div class="radio" required>
-            <label>
-              <input type="radio" name="optionsRadios" id="radio5" value="5" ng-model="formData.rating">
-              5
-            </label>
-          </div>
-        </div>
+
         <div class="form-group">
           <label for="latitude">Latitude</label>
           <input type="text" class="form-control" id="latitude" value="37.3351" ng-model="formData.latitude" readonly>
-        </div>
-        <div class="form-group">
+
           <label for="longitude">Longitude</label>
           <input type="text" class="form-control" id="longitude" value="-121.8929" ng-model="formData.longitude" readonly>
+
         </div>
 
         <!-- Submit button. Note that its tied to createUser() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
