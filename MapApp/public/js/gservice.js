@@ -75,14 +75,17 @@ angular.module('gservice', [])
 
         // Create popup windows for each record
         var navigate = "https://www.google.com/maps/search/?api=1&query=" + user.location[1] + "," + user.location[0];
-        var nav = "Navigate";
+        var streetView = "https://maps.googleapis.com/maps/api/streetview?size=400x400&location=" + user.location[1] + "," + user.location[0] + "&key=AIzaSyBy8SbaiHYcQ9jG5yb3sh6H4liB6EblhyU";
 
         var contentString =
           '<p><b>Name</b>: ' + user.username +
           '<br><b>Gender</b>: ' + user.gender +
           '<br><b>Rating</b>: ' + user.rating +
           '<br>' +
-          '<a href="' + navigate + '" target="_blank">Navigate</a>' +
+          '<a class="linkless" href="' + navigate + '" target="_blank"><button type="button">Navigate</button></a>' +
+          '<br>' +
+          '<a href="' + streetView + '" target="_blank"><button type="button">Street View</button></a>' +
+          '<button type="submit" class="btn btn-danger btn-block" ng-click="rate(); location.href="../index.html/#/rate"">Rate</button>' +
           '</p>';
 
         // Converts each of the JSON records into Google Maps Location format (Note [Lat, Lng] format).
@@ -149,6 +152,7 @@ angular.module('gservice', [])
           map.setCenter(marker.getPosition());
           currentSelectedMarker = n;
           n.message.open(map, marker);
+          //window.open("/#/rate");
         });
       });
 
