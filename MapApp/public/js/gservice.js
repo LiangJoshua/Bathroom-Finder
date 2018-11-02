@@ -78,7 +78,7 @@ angular.module('gservice', [])
         var nav = "Navigate";
 
         var contentString =
-          '<p><b>Username</b>: ' + user.username +
+          '<p><b>Name</b>: ' + user.username +
           '<br><b>Gender</b>: ' + user.gender +
           '<br><b>Rating</b>: ' + user.rating +
           '<br>' +
@@ -138,7 +138,7 @@ angular.module('gservice', [])
           position: n.latlon,
           map: map,
           title: "Click to view Bathroom",
-          icon: icon,
+          icon: "../images/toilets.png",
         });
 
         // For each marker created, add a listener that checks for clicks
