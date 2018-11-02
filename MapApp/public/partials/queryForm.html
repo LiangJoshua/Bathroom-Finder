@@ -30,7 +30,7 @@
                 </div>
 
                 <!-- Note ng-true-value which translates check values into explicit gender strings -->
-                <label>Gender</label>
+                <label>Bathroom Gender-type</label>
                 <div class="form-group">
                     <label class="checkbox-inline">
                         <input type="checkbox" name="optionsRadios" id="checkmale" value="Male" ng-model="formData.male" ng-true-value = "'Male'">
@@ -45,7 +45,14 @@
                         Unisex
                     </label>
                 </div>
-
+                <label class="radio control-label">Bathroom Rating</label>
+                <select name="bathroomRating" ng-model="formData.rating">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
                 <!-- Query button. Note that its tied to queryUsers() function from queryCtrl.  -->
                 <button type="submit" class="btn btn-danger btn-block" ng-click="queryUsers()">Search</button>
             </form>
