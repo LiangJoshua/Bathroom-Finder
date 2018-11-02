@@ -18,8 +18,8 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geol
     };
 
     // Set the latitude and longitude equal to the HTML5 coordinates
-    $scope.formData.longitude = parseFloat(coords.long).toFixed(3);
-    $scope.formData.latitude = parseFloat(coords.lat).toFixed(3);
+    $scope.formData.longitude = parseFloat(coords.long);
+    $scope.formData.latitude = parseFloat(coords.lat);
   });
 
   // Get coordinates based on mouse click. When a click event is detected....
@@ -27,8 +27,8 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geol
 
     // Run the gservice functions associated with identifying coordinates
     $scope.$apply(function() {
-      $scope.formData.latitude = parseFloat(gservice.clickLat).toFixed(3);
-      $scope.formData.longitude = parseFloat(gservice.clickLong).toFixed(3);
+      $scope.formData.latitude = parseFloat(gservice.clickLat);
+      $scope.formData.longitude = parseFloat(gservice.clickLong);
     });
   });
 
@@ -43,6 +43,11 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geol
       male: $scope.formData.male,
       female: $scope.formData.female,
       unisex: $scope.formData.unisex,
+      one: $scope.formData.one,
+      two: $scope.formData.two,
+      three: $scope.formData.three,
+      four: $scope.formData.four,
+      five: $scope.formData.five,
       other: $scope.formData.other,
       reqVerified: $scope.formData.verified
     };
