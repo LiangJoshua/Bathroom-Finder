@@ -18,6 +18,7 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
         // Set the latitude and longitude equal to the HTML5 coordinates
         coords = {lat:data.coords.latitude, long:data.coords.longitude};
 
+<<<<<<< HEAD
         // Display coordinates in location textboxes
         $scope.formData.longitude = parseFloat(coords.long);
         $scope.formData.latitude = parseFloat(coords.lat);
@@ -25,7 +26,13 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
 
 
 
+=======
+        // Display coordinates in location textboxes rounded to three decimal points
+        $scope.formData.longitude = parseFloat(coords.long);
+        $scope.formData.latitude = parseFloat(coords.lat);
+>>>>>>> 41ea1eddcc9deb3376a6d0c505c9b262835b90fb
 
+        gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
     });
 
     // Functions
