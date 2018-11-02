@@ -1,91 +1,121 @@
 // Dependencies
-var mongoose        = require('mongoose');
-var User            = require('./model.js');
+var mongoose = require('mongoose');
+var User = require('./model.js');
 
 
 // Opens App Routes
 module.exports = function(app) {
 
-    // GET Routes
-    // --------------------------------------------------------
-    // Retrieve records for all users in the db
-    app.get('/users', function(req, res){
+  // GET Routes
+  // --------------------------------------------------------
+  // Retrieve records for all users in the db
+  app.get('/users', function(req, res) {
 
-        // Uses Mongoose schema to run the search (empty conditions)
-        var query = User.find({});
-        query.exec(function(err, users){
-            if(err)
-                res.send(err);
+    // Uses Mongoose schema to run the search (empty conditions)
+    var query = User.find({});
+    query.exec(function(err, users) {
+      if (err)
+        res.send(err);
 
-            // If no errors are found, it responds with a JSON of all users
-            res.json(users);
-        });
+      // If no errors are found, it responds with a JSON of all users
+      res.json(users);
     });
+  });
 
-    // POST Routes
-    // --------------------------------------------------------
-    // Provides method for saving new users in the db
-    app.post('/users', function(req, res){
+  // POST Routes
+  // --------------------------------------------------------
+  // Provides method for saving new users in the db
+  app.post('/users', function(req, res) {
 
-        // Creates a new User based on the Mongoose schema and the post bo.dy
-        var newuser = new User(req.body);
+    // Creates a new User based on the Mongoose schema and the post bo.dy
+    var newuser = new User(req.body);
 
-        // New User is saved in the db.
-        newuser.save(function(err){
-            if(err)
-                res.send(err);
+    // New User is saved in the db.
+    newuser.save(function(err) {
+      if (err)
+        res.send(err);
 
-            // If no errors are found, it responds with a JSON of the new user
-            res.json(req.body);
-        });
+      // If no errors are found, it responds with a JSON of the new user
+      res.json(req.body);
     });
+  });
 
-    // Retrieves JSON records for all users who meet a certain set of query conditions
-    app.post('/query/', function(req, res){
+  // Retrieves JSON records for all users who meet a certain set of query conditions
+  app.post('/query/', function(req, res) {
 
-        // Grab all of the query parameters from the body.
-        var lat             = req.body.latitude;
-        var long            = req.body.longitude;
-        var distance        = req.body.distance;
-        var male            = req.body.male;
-        var female          = req.body.female;
-	var unisex          = req.body.unisex;
-        var other           = req.body.other;
-        var reqVerified     = req.body.reqVerified;
+    // Grab all of the query parameters from the body.
+    var lat = req.body.latitude;
+    var long = req.body.longitude;
+    var distance = req.body.distance;
+    var male = req.body.male;
+    var female = req.body.female;
+    var unisex = req.body.unisex;
+    var one = req.body.one;
+    var two = req.body.two;
+    var three = req.body.three;
+    var four = req.body.four;
+    var five = req.body.five;
+    var other = req.body.other;
+    var reqVerified = req.body.reqVerified;
 
-        // Opens a generic Mongoose Query. Depending on the post body we will...
-        var query = User.find({});
+    // Opens a generic Mongoose Query. Depending on the post body we will...
+    var query = User.find({});
 
-        // ...include filter by Max Distance (converting miles to meters)
-        if(distance){
+    // ...include filter by Max Distance (converting miles to meters)
+    if (distance) {
 
-            // Using MongoDB's geospatial querying features. (Note how coordinates are set [long, lat]
-            query = query.where('location').near({ center: {type: 'Point', coordinates: [long, lat]},
+      // Using MongoDB's geospatial querying features. (Note how coordinates are set [long, lat]
+      query = query.where('location').near({
+        center: {
+          type: 'Point',
+          coordinates: [long, lat]
+        },
 
-                // Converting meters to miles. Specifying spherical geometry (for globe)
-                maxDistance: distance * 1609.34, spherical: true});
+        // Converting meters to miles. Specifying spherical geometry (for globe)
+        maxDistance: distance * 1609.34,
+        spherical: true
+      });
 
-        }
+    }
 
-        // ...include filter by Gender (all options)
-        if(male || female || unisex){
-            query.or([{ 'gender': male }, { 'gender': female }, {'gender': unisex}]);
-        }
+    // ...include filter by Gender (all options)
+    if (male || female || unisex) {
+      query.or([{
+        'gender': male
+      }, {
+        'gender': female
+      }, {
+        'gender': unisex
+      }]);
+    }
 
-        
+    // ...include filter by Rating (all options)
+    if (one || two || three || four || five) {
+      query.or([{
+        'rating': one
+      }, {
+        'rating': two
+      }, {
+        'rating': three
+      }, {
+        'rating': four
+      }, {
+        'rating': five
+      }]);
+    }
 
-        // ...include filter for HTML5 Verified Locations
-        if(reqVerified){
-            query = query.where('htmlverified').equals("Yep (Thanks for giving us real data!)");
-        }
+    // ...include filter for HTML5 Verified Locations
+    if (reqVerified) {
+      query = query.where('htmlverified').equals("Yep (Thanks for giving us real data!)");
+    }
 
-        // Execute Query and Return the Query Results
-        query.exec(function(err, users){
-            if(err)
-                res.send(err);
+    // Execute Query and Return the Query Results
+    query.exec(function(err, users) {
+      if (err)
+        res.send(err);
 
-            // If no errors, respond with a JSON of all users that meet the criteria
-            res.json(users);
-        });
+      // If no errors, respond with a JSON of all users that meet the criteria
+      res.json(users);
     });
-};  
+  });
+};
