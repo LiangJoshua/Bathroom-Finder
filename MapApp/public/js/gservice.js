@@ -78,6 +78,7 @@ angular.module('gservice', [])
         var contentString =
           '<p><b>Username</b>: ' + user.username +
           '<br><b>Gender</b>: ' + user.gender +
+          '<br><b>Rating</b>: ' + user.rating +
           '<br>' +
           '<a href="' + navigate + '" target="_blank">Navigate</a>' +
           '</p>';
@@ -91,6 +92,7 @@ angular.module('gservice', [])
           }),
           username: user.username,
           gender: user.gender,
+          rating: user.rating,
         });
       }
       // location is now an array populated with records in Google Maps format
