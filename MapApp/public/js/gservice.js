@@ -17,6 +17,8 @@ angular.module('gservice', [])
     // Selected Location (initialize to downtown SJ)
     var selectedLat = 37.3351;
     var selectedLong = -121.8929;
+    //var selectedLat = 0;
+    //var selectedLong = 0;
 
     // Handling Clicks and location selection
     googleMapService.clickLat = 0;
@@ -104,8 +106,10 @@ angular.module('gservice', [])
 
       // Uses the selected lat, long as starting point
       var myLatLng = {
+
         lat: selectedLat,
         lng: selectedLong
+
       };
 
       // If map has not been created...
@@ -116,7 +120,10 @@ angular.module('gservice', [])
           zoom: 15,
           center: myLatLng
         });
+
       }
+
+
 
       // If a filter was used set the icons yellow, otherwise blue
       if (filter) {
@@ -130,7 +137,7 @@ angular.module('gservice', [])
         var marker = new google.maps.Marker({
           position: n.latlon,
           map: map,
-          title: "Big Map",
+          title: "Click to view Bathroom",
           icon: icon,
         });
 
@@ -138,6 +145,8 @@ angular.module('gservice', [])
         google.maps.event.addListener(marker, 'click', function(e) {
 
           // When clicked, open the selected marker's message
+          map.setZoom(17);
+          map.setCenter(marker.getPosition());
           currentSelectedMarker = n;
           n.message.open(map, marker);
         });
