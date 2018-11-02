@@ -50,11 +50,7 @@ module.exports = function(app) {
     var male = req.body.male;
     var female = req.body.female;
     var unisex = req.body.unisex;
-    var one = req.body.one;
-    var two = req.body.two;
-    var three = req.body.three;
-    var four = req.body.four;
-    var five = req.body.five;
+    var rating = req.body.rating;
     var other = req.body.other;
     var reqVerified = req.body.reqVerified;
 
@@ -88,21 +84,25 @@ module.exports = function(app) {
         'gender': unisex
       }]);
     }
+    // ...include filter by Rating
+    if (rating) {
+      query = query.where('rating').lte(rating);
+    }
 
     // ...include filter by Rating (all options)
-    if (one || two || three || four || five) {
-      query.or([{
-        'rating': one
-      }, {
-        'rating': two
-      }, {
-        'rating': three
-      }, {
-        'rating': four
-      }, {
-        'rating': five
-      }]);
-    }
+    // if (one || two || three || four || five) {
+    //   query.or([{
+    //     'rating': one
+    //   }, {
+    //     'rating': two
+    //   }, {
+    //     'rating': three
+    //   }, {
+    //     'rating': four
+    //   }, {
+    //     'rating': five
+    //   }]);
+    // }
 
     // ...include filter for HTML5 Verified Locations
     if (reqVerified) {
