@@ -43,11 +43,7 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geol
       male: $scope.formData.male,
       female: $scope.formData.female,
       unisex: $scope.formData.unisex,
-      one: $scope.formData.one,
-      two: $scope.formData.two,
-      three: $scope.formData.three,
-      four: $scope.formData.four,
-      five: $scope.formData.five,
+      rating: $scope.formData.rating,
       other: $scope.formData.other,
       reqVerified: $scope.formData.verified
     };
