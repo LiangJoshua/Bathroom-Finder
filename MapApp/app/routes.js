@@ -86,7 +86,7 @@ module.exports = function(app) {
     }
     // ...include filter by Rating
     if (rating) {
-      query = query.where('rating').lte(rating);
+      query = query.where('rating').gte(rating);
     }
 
     // ...include filter by Rating (all options)
