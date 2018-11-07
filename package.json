@@ -11,8 +11,8 @@
     "method-override": "~2.1.2"
   },
   "scripts":{
-    "start": "node server.js",
-    "postinstall": "bower install && gulp build-libs && gulp build"
+    "start": "node server.js"
+
   }
 
 }
