@@ -1,12 +1,16 @@
 {
-    "name": "MeanMapsApp",
-    "main": "server.js",
-    "dependencies": {
-        "express": "~4.7.2",
-        "mongoose": "~4.1.0",
-        "morgan": "~1.2.2",
-        "body-parser": "~1.5.2",
-        "jsonwebtoken": "^5.0.2",
-        "method-override": "~2.1.2"
-    }
+  "name": "MeanMapsApp",
+  "main": "server.js",
+  "dependencies": {
+    "express": "~4.7.2",
+    "mongoose": "~4.1.0",
+    "morgan": "~1.2.2",
+    "body-parser": "~1.5.2",
+    "jsonwebtoken": "^5.0.2",
+    "method-override": "~2.1.2"
+  }
+  "scripts": {
+    "start": "node server.js",
+    "postinstall": "bower install && gulp build-libs && gulp build"
+  }
 }
