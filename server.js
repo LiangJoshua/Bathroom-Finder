@@ -13,7 +13,7 @@ var app             = express();
 // -----------------------------------------------------
 // Sets the connection to MongoDB
 
-mongoose.connect(process.env.MONGOLAB_URI || "mongodb://localhost/MeanMapApp");
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/MeanMapApp');
 // Logging and Parsing
 app.use(express.static(__dirname + '/public'));                 // sets the static files location to public
 app.use('/bower_components',  express.static(__dirname + '/bower_components')); // Use BowerComponents
