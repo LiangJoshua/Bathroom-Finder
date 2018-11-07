@@ -30,5 +30,5 @@ require('./app/routes.js')(app);
 
 // Listen
 // -------------------------------------------------------
-app.listen(PORT);
-console.log('App listening on port ' + PORT);
+app.listen(port);
+console.log('App listening on port ' + port);
