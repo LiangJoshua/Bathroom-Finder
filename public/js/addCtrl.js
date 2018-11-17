@@ -9,25 +9,28 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
   var lat = 0;
   var long = 0;
 
-  // Set initial coordinates to the downtown SJ
-  // $scope.formData.latitude = 37.3351;
-  // $scope.formData.longitude = -121.8929;
+  // Function that refreshes Google Maps with user's current location
+  $scope.refresh = function() {
+    // Set initial coordinates to the downtown SJ
+    // $scope.formData.latitude = 37.3351;
+    // $scope.formData.longitude = -121.8929;
 
-  geolocation.getLocation().then(function(data) {
+    geolocation.getLocation().then(function(data) {
 
-    // Set the latitude and longitude equal to the HTML5 coordinates
-    coords = {
-      lat: data.coords.latitude,
-      long: data.coords.longitude
-    };
+      // Set the latitude and longitude equal to the HTML5 coordinates
+      coords = {
+        lat: data.coords.latitude,
+        long: data.coords.longitude
+      };
 
 
-    // Display coordinates in location textboxes
-    $scope.formData.longitude = parseFloat(coords.long);
-    $scope.formData.latitude = parseFloat(coords.lat);
+      // Display coordinates in location textboxes
+      $scope.formData.longitude = parseFloat(coords.long);
+      $scope.formData.latitude = parseFloat(coords.lat);
 
-    gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
-  });
+      gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
+    });
+  };
 
   // Functions
   // ----------------------------------------------------------------------------
@@ -67,6 +70,6 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
       .error(function(data) {
         console.log('Error: ' + data);
       });
-      
+
   };
 });
