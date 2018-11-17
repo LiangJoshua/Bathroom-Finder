@@ -76,16 +76,19 @@ angular.module('gservice', [])
         // Create popup windows for each record
         var navigate = "https://www.google.com/maps/search/?api=1&query=" + user.location[1] + "," + user.location[0];
         var streetView = "https://maps.googleapis.com/maps/api/streetview?size=400x400&location=" + user.location[1] + "," + user.location[0] + "&key=AIzaSyBy8SbaiHYcQ9jG5yb3sh6H4liB6EblhyU";
+        var rate = "../#/rate?id=5befeea6b77efe03d0374185";
 
         var contentString =
           '<p><b>Name</b>: ' + user.username +
+          '<br><b>ID</b>: ' + user._id +
           '<br><b>Gender</b>: ' + user.gender +
           '<br><b>Rating</b>: ' + user.rating +
           '<br>' +
           '<a class="linkless" href="' + navigate + '" target="_blank"><button type="button">Navigate</button></a>' +
           '<br>' +
           '<a href="' + streetView + '" target="_blank"><button type="button">Street View</button></a>' +
-          '<button type="submit" class="btn btn-danger btn-block" ng-click="rate(); location.href="../index.html/#/rate"">Rate</button>' +
+          '<br>' +
+          '<a href="' + rate + '"><button type="button">Rate</button></a>' +
           '</p>';
 
         // Converts each of the JSON records into Google Maps Location format (Note [Lat, Lng] format).
