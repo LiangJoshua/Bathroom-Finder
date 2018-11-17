@@ -21,6 +21,52 @@ module.exports = function(app) {
       res.json(users);
     });
   });
+  // GET Routes
+  // --------------------------------------------------------
+  // Retrieve records for users in the db based off id
+  app.get('/users/:id', function(req, res) {
+
+
+    User.findById(req.params.id, function(err, bathroom) {
+      if (err)
+        res.send(err);
+      res.json(bathroom);
+    });
+  });
+
+  //   // Uses Mongoose schema to run the search (empty conditions)
+  //   var query = User.findById(req.params.id);
+  //   query.exec(function(err, users) {
+  //     if (err)
+  //       res.send(err);
+  //
+  //     // If no errors are found, it responds with a JSON of all users
+  //     res.json(users);
+  //   });
+  // });
+
+  app.put('/users/:id', function(req, res) {
+
+
+    User.findById(req.body.id, function(err, bathroom) {
+
+      if (err)
+        res.send(err);
+
+      bathroom.rating = req.body.rating; // update the rating info
+
+      // save
+      bathroom.save(function(err) {
+        if (err)
+          res.send(err);
+
+        res.json({
+          message: 'User updated!'
+        });
+      });
+
+    });
+  });
 
   // POST Routes
   // --------------------------------------------------------
