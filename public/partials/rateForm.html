@@ -1,4 +1,4 @@
-<!-- Find Teammates (Query) Form -->
+<!-- Rate Bathrooms (Put) Form -->
 <div class="col-md-5">
 
   <!-- Creates Main Panel -->
@@ -6,19 +6,26 @@
 
     <!-- Panel Title -->
     <div class="panel-heading">
-      <h2 class="panel-title text-center">Rate Bathroom<span class="glyphicon glyphicon-search"></span></h2>
+      <h2 class="panel-title text-center">Rate Bathroom</h2>
     </div>
 
     <!-- Panel Body -->
     <div class="panel-body">
 
       <!-- Creates Form -->
-      <form name="rateForm">
-        <label for="rating">Bathroom Rating</label>
-        <input type="number" id="rating" placeholder="Min: 1, max: 5" min="1" max="5" ng-model="formData.rating">
-        <span class="validity"></span>
-        <!-- Query button. Note that its tied to queryUsers() function from queryCtrl.  -->
-        <button type="submit" class="btn btn-danger btn-block" ng-click="queryUsers()">Rate</button>
+      <form name="rateForm" novalidate>
+        <button type="submit" class="btn btn-success" ng-click="refresh()">My Location</button>
+        <div class="form-group">
+          <label for="id">Bathroom ID<span class="badge">All fields required</span></label>
+          <input type="text" class="form-control" id="id" name="id" placeholder="Click on bathroom from map to view ID" ng-model="formData.id" required>
+        </div>
+        <div class="form-group">
+          <label for="rating">Bathroom Rating</label>
+          <input type="number" class="form-control" id="rating" name="rating" placeholder="1-5" min="1" max="5" ng-model="formData.rating" required>
+          <span class="validity"></span>
+        </div>
+        <!-- Rate(Put) button. Note that its tied to updateUsers() function from rateCtrl.  -->
+        <button type="submit" class="btn btn-success btn-block" ng-click="updateUsers()" ng-disabled="rateForm.$invalid">Rate</button>
       </form>
     </div>
 
