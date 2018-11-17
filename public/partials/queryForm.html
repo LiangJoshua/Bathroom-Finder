@@ -14,7 +14,7 @@
 
       <!-- Creates Form -->
       <form name="queryForm">
-
+        <button type="submit" class="btn btn-primary" ng-click="refresh()">My Location</button>
         <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
         <div class="form-group">
           <label for="latitude">Your Latitude</label>
@@ -49,7 +49,7 @@
         <input type="number" id="rating" placeholder="Min: 1, max: 5" min="1" max="5" ng-model="formData.rating">
         <span class="validity"></span>
         <!-- Query button. Note that its tied to queryUsers() function from queryCtrl.  -->
-        <button type="submit" class="btn btn-danger btn-block" ng-click="queryUsers()">Search</button>
+        <button type="submit" class="btn btn-primary btn-block" ng-click="queryUsers()">Search</button>
       </form>
     </div>
 
