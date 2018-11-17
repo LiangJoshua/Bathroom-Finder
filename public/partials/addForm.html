@@ -14,7 +14,8 @@
 
       <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
       <form name="addForm" novalidate>
-
+        
+        <button type="submit" class="btn btn-danger" ng-click="refresh()">My Location</button>
         <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
         <div class="form-group">
           <label for="username">Bathroom Name <span class="badge">All fields required</span></label>
@@ -44,7 +45,7 @@
 
 
           <label for="rating">Bathroom Rating</label>
-          <input type="number" id="rating" name="rating" ng-model="formData.rating" placeholder="Min: 1, max: 5" min="1" max="5" required/>
+          <input type="number" id="rating" name="rating" ng-model="formData.rating" placeholder="Min: 1, max: 5" min="1" max="5" required>
           <span class="validity"></span>
 
 
