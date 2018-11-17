@@ -32,6 +32,30 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geol
     });
   });
 
+  // Function that refreshes Google Maps with user's current location
+  $scope.refresh = function() {
+    // Set initial coordinates to the downtown SJ
+    // $scope.formData.latitude = 37.3351;
+    // $scope.formData.longitude = -121.8929;
+
+    geolocation.getLocation().then(function(data) {
+
+      // Set the latitude and longitude equal to the HTML5 coordinates
+      coords = {
+        lat: data.coords.latitude,
+        long: data.coords.longitude
+      };
+
+
+      // Display coordinates in location textboxes
+      $scope.formData.longitude = parseFloat(coords.long);
+      $scope.formData.latitude = parseFloat(coords.lat);
+
+      gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
+    });
+  };
+
+
   // Take query parameters and incorporate into a JSON queryBody
   $scope.queryUsers = function() {
 
