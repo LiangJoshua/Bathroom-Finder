@@ -6,7 +6,7 @@ var Schema      = mongoose.Schema;
 var UserSchema = new Schema({
     username: {type: String, required: true},
     gender: {type: String, required: true},
-    rating: {type: Number, required: true}, 
+    rating: {type: Number, required: true},
     location: {type: [Number], required: true}, // [Long, Lat]
     created_at: {type: Date, default: Date.now},
     updated_at: {type: Date, default: Date.now}
@@ -25,5 +25,5 @@ UserSchema.pre('save', function(next){
 // Indexes this schema in 2dsphere format (critical for running proximity searches)
 UserSchema.index({location: '2dsphere'});
 
-// Exports the UserSchema for use elsewhere. Sets the MongoDB collection to be used as: "scotch-users"
-module.exports = mongoose.model('scotch-user', UserSchema);
+// Exports the UserSchema for use elsewhere. Sets the MongoDB collection to be used as: "MeanApp"
+module.exports = mongoose.model('bathroom', UserSchema);
