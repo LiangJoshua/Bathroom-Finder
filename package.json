@@ -1,7 +1,6 @@
 {
   "name": "MeanMapsApp",
   "main": "server.js",
-
   "dependencies": {
     "express": "~4.7.2",
     "mongoose": "~4.1.0",
@@ -10,9 +9,7 @@
     "jsonwebtoken": "^5.0.2",
     "method-override": "~2.1.2"
   },
-  "scripts":{
+  "scripts": {
     "start": "node server.js"
-
   }
-
 }
