@@ -14,12 +14,12 @@
 
       <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
       <form name="addForm" novalidate>
-        
+
         <button type="submit" class="btn btn-danger" ng-click="refresh()">My Location</button>
         <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
         <div class="form-group">
-          <label for="username">Bathroom Name <span class="badge">All fields required</span></label>
-          <input type="text" class="form-control" id="username" placeholder="Jack in the Box" ng-model="formData.username" required>
+          <label for="bathroomName">Bathroom Name <span class="badge">All fields required</span></label>
+          <input type="text" class="form-control" id="bathroomName" placeholder="Bathroom Name" ng-model="formData.bathroomName" required>
         </div>
         <label>Bathroom Gender-type</label>
         <div class="form-group" required>
