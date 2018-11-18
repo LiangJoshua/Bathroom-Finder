@@ -20,6 +20,8 @@ angular.module('gservice', [])
     //var selectedLat = 0;
     //var selectedLong = 0;
 
+    
+
     // Handling Clicks and location selection
     googleMapService.clickLat = 0;
     googleMapService.clickLong = 0;
