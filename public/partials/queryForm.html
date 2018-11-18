@@ -45,8 +45,8 @@
             Unisex
           </label>
         </div>
-        <label for="rating">Bathroom Rating</label>
-        <input type="number" id="rating" placeholder="Min: 1, max: 5" min="1" max="5" ng-model="formData.rating">
+        <label for="avgRating">Bathroom Rating</label>
+        <input class="form-control" type="number" id="avgRating" placeholder="Min: 1, max: 5" min="1" max="5" ng-model="formData.avgRating">
         <span class="validity"></span>
         <!-- Query button. Note that its tied to queryUsers() function from queryCtrl.  -->
         <button type="submit" class="btn btn-primary btn-block" ng-click="queryUsers()">Search</button>
