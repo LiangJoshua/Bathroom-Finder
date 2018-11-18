@@ -48,12 +48,14 @@ module.exports = function(app) {
   app.put('/users/:id', function(req, res) {
 
 
-    User.findById(req.body.id, function(err, bathroom) {
+    User.findOne(req.body.bathroomName, function(err, bathroom) {
 
       if (err)
         res.send(err);
 
-      bathroom.rating = req.body.rating; // update the rating info
+      bathroom.rating = bathroom.rating + req.body.rating; // update the rating info
+      bathroom.ratingCount = bathroom.ratingCount + 1;
+      bathroom.avgRating = (bathroom.rating / bathroom.ratingCount);
 
       // save
       bathroom.save(function(err) {
@@ -97,6 +99,7 @@ module.exports = function(app) {
     var female = req.body.female;
     var unisex = req.body.unisex;
     var rating = req.body.rating;
+    var avgRating = req.body.avgRating;
     var other = req.body.other;
     var reqVerified = req.body.reqVerified;
 
@@ -131,8 +134,8 @@ module.exports = function(app) {
       }]);
     }
     // ...include filter by Rating
-    if (rating) {
-      query = query.where('rating').gte(rating);
+    if (avgRating) {
+      query = query.where('avgRating').gte(avgRating);
     }
 
     // ...include filter by Rating (all options)
