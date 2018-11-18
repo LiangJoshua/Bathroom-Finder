@@ -76,7 +76,7 @@ angular.module('gservice', [])
         // Create popup windows for each record
         var navigate = "https://www.google.com/maps/search/?api=1&query=" + user.location[1] + "," + user.location[0];
         var streetView = "https://maps.googleapis.com/maps/api/streetview?size=400x400&location=" + user.location[1] + "," + user.location[0] + "&key=AIzaSyBy8SbaiHYcQ9jG5yb3sh6H4liB6EblhyU";
-        var rate = "../#/rate?id=5befeea6b77efe03d0374185";
+        var rate = "../#/rate";
 
         var contentString =
           '<p><b>Name</b>: ' + user.bathroomName +
