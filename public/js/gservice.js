@@ -79,10 +79,9 @@ angular.module('gservice', [])
         var rate = "../#/rate?id=5befeea6b77efe03d0374185";
 
         var contentString =
-          '<p><b>Name</b>: ' + user.username +
-          '<br><b>ID</b>: ' + user._id +
+          '<p><b>Name</b>: ' + user.bathroomName +
           '<br><b>Gender</b>: ' + user.gender +
-          '<br><b>Rating</b>: ' + user.rating +
+          '<br><b>Rating</b>: ' + user.avgRating+
           '<br>' +
           '<a class="linkless" href="' + navigate + '" target="_blank"><button type="button">Navigate</button></a>' +
           '<br>' +
@@ -98,9 +97,9 @@ angular.module('gservice', [])
             content: contentString,
             maxWidth: 320
           }),
-          username: user.username,
+          bathroomName: user.bathroomName,
           gender: user.gender,
-          rating: user.rating,
+          avgRating: user.avgRating,
         });
       }
       // location is now an array populated with records in Google Maps format
