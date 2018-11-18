@@ -32,9 +32,12 @@ rateCtrl.controller('rateCtrl', function($scope, $log, $http, $rootScope, geoloc
 
   // Take query parameters and incorporate into a JSON queryBody
   $scope.updateUsers = function() {
+    // Get ratingCount from database + 1
+    // rating equals
+
     // Grabs all of the text box fields
     var userData = {
-      id: $scope.formData.id,
+      bathroomName: $scope.formData.bathroomName,
       rating: $scope.formData.rating,
     };
 
@@ -48,6 +51,27 @@ rateCtrl.controller('rateCtrl', function($scope, $log, $http, $rootScope, geoloc
 
         // Once complete, thank the user with alert notification
         alert('Thank you for Rating!')
+
+
+        // Set initial coordinates to the downtown SJ
+        // $scope.formData.latitude = 37.3351;
+        // $scope.formData.longitude = -121.8929;
+
+        geolocation.getLocation().then(function(data) {
+
+          // Set the latitude and longitude equal to the HTML5 coordinates
+          coords = {
+            lat: data.coords.latitude,
+            long: data.coords.longitude
+          };
+
+
+          // Display coordinates in location textboxes
+          $scope.formData.longitude = parseFloat(coords.long);
+          $scope.formData.latitude = parseFloat(coords.lat);
+
+          gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
+        });
       })
       .error(function(data) {
         console.log('Error: ' + data);
