@@ -1,5 +1,5 @@
 // White-box test case using jest and supertest
-// Tests if the our route app.post will add bathrooms to MongoDB Database
+// Tests if our route app.post will add bathrooms to MongoDB Database
 const request = require('supertest');
 const express = require('express');
 var app = express();
