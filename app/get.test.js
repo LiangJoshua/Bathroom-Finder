@@ -20,7 +20,7 @@ app.get('/users', function(req, res) {
 describe('Test the test path with GET', function() {
 
   it('It should work', function() {
-    return request(app)
+    request(app)
       .get('/users')
       .expect(200)
   });
