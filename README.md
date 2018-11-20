@@ -1,9 +1,9 @@
 # Bathroom-Finder
 https://bathroom-finder-app.herokuapp.com/
 
-App 
+App folder of Bathroom-Finder directory
  - Server side (Back End)
  
- Public 
+ Public folder of Bathroom-Finder directory
  - client side (Front End)
  
