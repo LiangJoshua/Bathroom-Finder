@@ -1,3 +1,5 @@
+// White-box test case using jest and supertest
+// Tests if the User Schema Model of bathrooms are created with correct inputs via string or Number etc.
 const mongoose = require('mongoose');
 const Model = require('./model');
 
