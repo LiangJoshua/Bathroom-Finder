@@ -6,7 +6,7 @@ const Model = require('./model');
 describe('Test if bathroom is created with correct attributes', () => {
   it('It should return an error if a string is passed as a number for rating, avgRating, ratingCount, or location', (done) => {
     const model = new Model({
-      bathroomName: 2,
+      bathroomName: "Mcdonalds",
       gender: "Male",
       rating: 18,
       avgRating: 3.5,
