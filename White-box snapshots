@@ -1,0 +1,28 @@
+Last login: Mon Nov 19 19:09:48 on ttys003
+MacBookAIr:Bathroom-Finder macadmin$ npm test
+
+> MeanMapsApp@ test /Users/macadmin/Desktop/GitHub/Bathroom-Finder
+> jest
+
+ PASS  app/put.test.js
+ PASS  app/get.test.js
+ PASS  app/model.test.js
+  ● Console
+
+    console.log app/model.test.js:20
+      undefined
+
+ PASS  app/post.test.js
+ PASS  ./server.test.js
+  ● Console
+
+    console.log server.test.js:47
+      App listening on port 3000
+
+
+Test Suites: 5 passed, 5 total
+Tests:       5 passed, 5 total
+Snapshots:   0 total
+Time:        5.521s
+Ran all test suites.
+MacBookAIr:Bathroom-Finder macadmin$ 
