@@ -1,8 +1,10 @@
+// White-box test case using jest and supertest
+// Tests if the our route app.get will get bathrooms from MongoDB Database
 const request = require('supertest');
 const express = require('express');
 var app = express();
 var users = [{
-  bathroomName: 2,
+  bathroomName: "Jack in the Box",
   gender: "Male",
   rating: 18,
   avgRating: "aflsd",
