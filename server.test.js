@@ -1,3 +1,6 @@
+// White-Box test case using jest
+// Tests if the server successfully launches and shows the port Number
+
 // Dependencies
 // -----------------------------------------------------
 var express = require('express');
@@ -36,7 +39,7 @@ require('./app/routes.js')(app);
 // -------------------------------------------------------
 var port = process.env.PORT || 3000;
 
-
+// Jest testcase used here
 describe('Test if the port is running', function() {
 
   it('It should be running on port 3000', function() {
