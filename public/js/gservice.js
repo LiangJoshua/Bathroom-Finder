@@ -121,14 +121,14 @@ angular.module('gservice', [])
 
       // If map has not been created...
       if (!map) {
-
+        var map;
         // Create a new map and place in the index.html page
-        var map = new google.maps.Map(document.getElementById('map'), {
+        map = new google.maps.Map(document.getElementById('map'), {
           zoom: 15,
           center: myLatLng
+
         });
-        console.log("Map is ready.");
-        google.maps.event.trigger(map, 'resize');
+      
       }
 
 
