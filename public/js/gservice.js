@@ -20,7 +20,7 @@ angular.module('gservice', [])
     //var selectedLat = 0;
     //var selectedLong = 0;
 
-    
+
 
     // Handling Clicks and location selection
     googleMapService.clickLat = 0;
@@ -127,7 +127,8 @@ angular.module('gservice', [])
           zoom: 15,
           center: myLatLng
         });
-
+        console.log("Map is ready.");
+        google.maps.event.trigger(map, 'resize');
       }
 
 
