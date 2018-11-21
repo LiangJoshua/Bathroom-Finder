@@ -6,7 +6,8 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geol
   // ----------------------------------------------------------------------------
   $scope.formData = {};
   var queryBody = {};
-
+  var lat = 0;
+  var long = 0;
   // Functions
   // ----------------------------------------------------------------------------
 
@@ -75,8 +76,8 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geol
     // Post the queryBody to the /query POST route to retrieve the filtered results
     $http.post('/query', queryBody)
 
-      // Store the filtered results in queryResults
-      .success(function(queryResults) {
+    // Store the filtered results in queryResults
+    .success(function(queryResults) {
 
         // Initial Logging
         console.log("QueryBody:");
