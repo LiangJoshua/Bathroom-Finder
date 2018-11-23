@@ -5,7 +5,8 @@ rateCtrl.controller('rateCtrl', function($scope, $log, $http, $rootScope, geoloc
   // Initializes Variables
   // ----------------------------------------------------------------------------
   $scope.formData = {};
-
+  var lat = 0;
+  var long = 0;
 
   // Function that refreshes Google Maps with user's current location
   $scope.refresh = function() {
@@ -46,7 +47,7 @@ rateCtrl.controller('rateCtrl', function($scope, $log, $http, $rootScope, geoloc
       .success(function(data) {
 
         // Once complete, clear the form (except location)
-        $scope.formData.id = "";
+        $scope.formData.bathroomName = "";
         $scope.formData.rating = "";
 
         // Once complete, thank the user with alert notification

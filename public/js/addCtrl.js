@@ -9,6 +9,10 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
   var lat = 0;
   var long = 0;
 
+
+
+  // Functions
+  // ----------------------------------------------------------------------------
   // Function that refreshes Google Maps with user's current location
   $scope.refresh = function() {
     // Set initial coordinates to the downtown SJ
@@ -32,8 +36,7 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
     });
   };
 
-  // Functions
-  // ----------------------------------------------------------------------------
+
   // Get coordinates based on mouse click. When a click event is detected....
   $rootScope.$on("clicked", function() {
 

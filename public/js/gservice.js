@@ -20,7 +20,7 @@ angular.module('gservice', [])
     //var selectedLat = 0;
     //var selectedLong = 0;
 
-    
+
 
     // Handling Clicks and location selection
     googleMapService.clickLat = 0;
@@ -83,11 +83,18 @@ angular.module('gservice', [])
         var contentString =
           '<p><b>Name</b>: ' + user.bathroomName +
           '<br><b>Gender</b>: ' + user.gender +
-          '<br><b>Rating</b>: ' + user.avgRating+
+          '<br><b>Rating</b>: ' + user.avgRating +
           '<br>' +
           '<a class="linkless" href="' + navigate + '" target="_blank"><button type="button">Navigate</button></a>' +
           '<br>' +
           '<a href="' + streetView + '" target="_blank"><button type="button">Street View</button></a>' +
+          '<br>' +
+          '<form name="rateForm" novalidate>' +
+          '<input type="text" class="form-control" id="bathroomName" name="bathroomName" ng-model="formData.bathroomName" ng-init="formData.bathroomName=' + user.bathroomName + '" value="' + user.bathroomName + '" required>' +
+          '<input type="number" class="form-control" id="rating" name="rating" placeholder="1-5" min="1" max="5" ng-model="formData.rating" required>' +
+          '<span class="validity"></span>' +
+          '<button type="submit" class="btn btn-success btn-block" ng-click="updateUsers()" ng-disabled="rateForm.$invalid">Rate</button>' +
+
           '<br>' +
           '<a href="' + rate + '"><button type="button">Rate</button></a>' +
           '</p>';

@@ -48,7 +48,7 @@ module.exports = function(app) {
   app.put('/users/:id', function(req, res) {
 
 
-    User.findOne(req.body.bathroomName, function(err, bathroom) {
+    User.findOneAndUpdate({bathroomName: req.body.bathroomName}, {new: true}, (err, bathroom) =>{
 
       if (err)
         res.send(err);
