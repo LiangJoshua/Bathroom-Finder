@@ -17,8 +17,9 @@
         <button type="submit" class="btn btn-success" ng-click="refresh()">My Location</button>
         <div class="form-group">
           <label for="bathroomName">Bathroom Name <span class="badge">All fields required</span></label>
-          <input type="text" class="form-control" id="bathroomName" name="bathroomName" placeholder="Click on bathroom from map to name" ng-model="formData.bathroomName" required>
+          <input type="text" class="form-control" id="bathroomName" name="bathroomName" ng-model="formData.bathroomName" required>
         </div>
+
         <div class="form-group">
           <label for="rating">Bathroom Rating</label>
           <input type="number" class="form-control" id="rating" name="rating" placeholder="1-5" min="1" max="5" ng-model="formData.rating" required>
