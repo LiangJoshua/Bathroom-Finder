@@ -6,7 +6,8 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geol
   // ----------------------------------------------------------------------------
   $scope.formData = {};
   var queryBody = {};
-
+  var lat = 0;
+  var long = 0;
   // Functions
   // ----------------------------------------------------------------------------
 
@@ -46,8 +47,7 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geol
         long: data.coords.longitude
       };
 
-      console.log(data.coords.latitude);
-      console.log(data.coords.longitude);
+
       // Display coordinates in location textboxes
       $scope.formData.longitude = parseFloat(coords.long);
       $scope.formData.latitude = parseFloat(coords.lat);
