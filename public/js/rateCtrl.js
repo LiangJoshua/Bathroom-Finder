@@ -1,12 +1,14 @@
 // Creates the rateCtrl Module and Controller. Note that it depends on 'geolocation' and 'gservice' modules.
 var rateCtrl = angular.module('rateCtrl', ['geolocation', 'gservice']);
-rateCtrl.controller('rateCtrl', function($scope, $log, $http, $rootScope, geolocation, gservice) {
+rateCtrl.controller('rateCtrl', function($scope, $location, $log, $http, $rootScope, geolocation, gservice, $route, $routeParams) {
 
   // Initializes Variables
   // ----------------------------------------------------------------------------
   $scope.formData = {};
   var lat = 0;
   var long = 0;
+
+$scope.formData.bathroomName = $location.search().bathroomName;
 
   // Function that refreshes Google Maps with user's current location
   $scope.refresh = function() {
