@@ -128,8 +128,7 @@ angular.module('gservice', [])
           center: myLatLng
 
         });
-        // Console test if map sucessfully refreshed
-        console.log("Map refreshed");
+      
       }
 
 
