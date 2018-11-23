@@ -20,6 +20,6 @@ var app = angular.module('meanMapApp', ['addCtrl', 'queryCtrl', 'rateCtrl', 'geo
         // All else forward to the Find Bathroom Control Panel
       })
       .otherwise({
-        redirectTo: '/add'
+        redirectTo: '/find'
       })
   });
