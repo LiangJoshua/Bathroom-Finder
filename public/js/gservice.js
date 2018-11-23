@@ -78,7 +78,7 @@ angular.module('gservice', [])
         // Create popup windows for each record
         var navigate = "https://www.google.com/maps/search/?api=1&query=" + user.location[1] + "," + user.location[0];
         var streetView = "https://maps.googleapis.com/maps/api/streetview?size=400x400&location=" + user.location[1] + "," + user.location[0] + "&key=AIzaSyBy8SbaiHYcQ9jG5yb3sh6H4liB6EblhyU";
-        var rate = "../#/rate";
+        var rate = "/#/rate?bathroomName=" + user.bathroomName;
 
         var contentString =
           '<p><b>Name</b>: ' + user.bathroomName +
@@ -88,13 +88,6 @@ angular.module('gservice', [])
           '<a class="linkless" href="' + navigate + '" target="_blank"><button type="button">Navigate</button></a>' +
           '<br>' +
           '<a href="' + streetView + '" target="_blank"><button type="button">Street View</button></a>' +
-          '<br>' +
-          '<form name="rateForm" novalidate>' +
-          '<input type="text" class="form-control" id="bathroomName" name="bathroomName" ng-model="formData.bathroomName" ng-init="formData.bathroomName=' + user.bathroomName + '" value="' + user.bathroomName + '" required>' +
-          '<input type="number" class="form-control" id="rating" name="rating" placeholder="1-5" min="1" max="5" ng-model="formData.rating" required>' +
-          '<span class="validity"></span>' +
-          '<button type="submit" class="btn btn-success btn-block" ng-click="updateUsers()" ng-disabled="rateForm.$invalid">Rate</button>' +
-
           '<br>' +
           '<a href="' + rate + '"><button type="button">Rate</button></a>' +
           '</p>';
