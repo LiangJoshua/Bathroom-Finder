@@ -81,16 +81,18 @@ angular.module('gservice', [])
         var rate = "/#/rate?bathroomName=" + user.bathroomName;
 
         var contentString =
-          '<p><b>Name</b>: ' + user.bathroomName +
-          '<br><b>Gender</b>: ' + user.gender +
-          '<br><b>Rating</b>: ' + user.avgRating +
+          '<div id="iw-container">' +
+          '<div class="iw-title">' + user.bathroomName + '</div>' +
+          '<div class="iw-subTitle"><b>Gender</b>: ' + user.gender + '</div>' +
+          '<div class="iw-subTitle"><b>Rating</b>: ' + user.avgRating + ' stars, ' + user.ratingCount + ' reviews</div>' +
+          '<p><br><a href="' + navigate + '" target="_blank"><button class="btn btn-primary btn-block" type="button">Navigate</button></a>' +
           '<br>' +
-          '<a class="linkless" href="' + navigate + '" target="_blank"><button type="button">Navigate</button></a>' +
+          '<a class="linkless" href="' + streetView + '" target="_blank"><button class="btn btn-danger btn-block" type="button">Street View</button></a>' +
           '<br>' +
-          '<a href="' + streetView + '" target="_blank"><button type="button">Street View</button></a>' +
-          '<br>' +
-          '<a href="' + rate + '"><button type="button">Rate</button></a>' +
-          '</p>';
+          '<a style="linkless" href="' + rate + '" class="linkless"><button class="btn btn-success btn-block" type="button">Rate</button></a>' +
+          '</p>' +
+          '</div>';
+
 
         // Converts each of the JSON records into Google Maps Location format (Note [Lat, Lng] format).
         locations.push({
