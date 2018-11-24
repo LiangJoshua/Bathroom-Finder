@@ -23,12 +23,9 @@
   border-radius: 2px 2px 0 0;
 }
 
-
 .iw-subTitle {
   font-size: 14px;
 }
-
-
 
 #responsivePanel {}
 
@@ -44,21 +41,35 @@ input:invalid+span:after {
   padding-left: 5px;
 }
 
-#rating {
-  width: 43%;
-}
-
 .linkless {
   text-decoration: none !important;
 }
 
 span.stars, span.stars span {
-    display: block;
-    background: url(stars.png) 0 -16px repeat-x;
-    width: 80px;
-    height: 16px;
+  display: block;
+  background: url(stars.png) 0 -16px repeat-x;
+  width: 80px;
+  height: 16px;
 }
 
 span.stars span {
-    background-position: 0 0;
+  background-position: 0 0;
+}
+
+body {
+  background: aliceblue;
+}
+
+.nav-pills>li>a.active {
+  background-color: #0066CC !important;
+  color: white !important;
+}
+
+.nav-pills>li>a:hover {
+  background-color: #0066CC !important;
+  color: white !important;
+}
+
+.nav-link-color {
+  color: black;
 }

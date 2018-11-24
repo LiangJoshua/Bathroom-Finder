@@ -1,6 +1,6 @@
 // Creates the addCtrl Module and Controller. Note that it depends on the 'geolocation' and 'gservice' modules and controllers.
 var addCtrl = angular.module('addCtrl', ['geolocation', 'gservice']);
-addCtrl.controller('addCtrl', function($scope, $route, $http, $rootScope, geolocation, gservice) {
+addCtrl.controller('addCtrl', function($scope, $location, $route, $http, $rootScope, geolocation, gservice) {
 
   // Initializes Variables
   // ----------------------------------------------------------------------------
@@ -17,6 +17,9 @@ addCtrl.controller('addCtrl', function($scope, $route, $http, $rootScope, geoloc
 
   // Functions
   // ----------------------------------------------------------------------------
+  $scope.isActive = function(route) {
+    return route === $location.path();
+  }
   // Function that refreshes Google Maps with user's current location
   $scope.refresh = function() {
     // Set initial coordinates to the downtown SJ

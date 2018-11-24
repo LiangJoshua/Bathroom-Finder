@@ -1,6 +1,6 @@
 // Creates the queryCtrl Module and Controller. Note that it depends on 'geolocation' and 'gservice' modules.
 var queryCtrl = angular.module('queryCtrl', ['geolocation', 'gservice']);
-queryCtrl.controller('queryCtrl', function($scope, $route, $log, $http, $rootScope, geolocation, gservice) {
+queryCtrl.controller('queryCtrl', function($scope, $location, $route, $log, $http, $rootScope, geolocation, gservice) {
 
   // Initializes Variables
   // ----------------------------------------------------------------------------
@@ -16,6 +16,10 @@ queryCtrl.controller('queryCtrl', function($scope, $route, $log, $http, $rootSco
 
   // Functions
   // ----------------------------------------------------------------------------
+  $scope.isActive = function(route) {
+    return route === $location.path();
+  }
+
   // Function that refreshes Google Maps with user's current location
   $scope.refresh = function() {
     // Set initial coordinates to the downtown SJ

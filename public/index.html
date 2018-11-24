@@ -33,14 +33,15 @@
 <body>
   <div class="container">
     <div class="header">
-
+<div class="MyCtrl">
       <ul class="nav nav-pills pull-right">
         <!-- Links to the three menu views included -->
-        <li ng-class="{active: $route.current.activetab == 'add'}"><a href="/#/add">Add Bathroom</a></li>
-        <li ng-class="{active: $route.current.activetab == 'find'}"><a href="/#/find">Find Bathrooms</a></li>
-        <li class="hidden"><a href="/#/rate">Rate Bathroom</a></li>
+        <li ng-class="{active:isActive('/add')}" class="nav-item"><a class="nav-link nav-link-color" data-toggle="tab" href="/#/add">Add Bathroom</a></li>
+        <li ng-class="{active:isActive('/find')}" class="nav-item"><a class="nav-link nav-link-color" data-toggle="tab" href="/#/find">Find Bathrooms</a></li>
+        <li class="hidden nav-item"><a href="/#/rate">Rate Bathroom</a></li>
       </ul>
-      <h3 class="text-muted">Bathroom Finder</h3>
+    </div>
+      <h1 class="text-muted">Bathroom Finder</h>
     </div>
     <!-- Map and Side Panel -->
     <div class="row content">
