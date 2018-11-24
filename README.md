@@ -19,5 +19,5 @@ App folder of Bathroom-Finder directory
      
  - Open a new terminal window 
  - Get to the Bathroom-Finder directory and run the command "node server.js"
- - Open up a browser and type in "http://localhost:3000/add"
+ - Open up a browser and type in "http://localhost:3000"
 
