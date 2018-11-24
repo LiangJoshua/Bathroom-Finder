@@ -15,7 +15,7 @@
       <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
       <form name="addForm" novalidate>
 
-        <button type="submit" class="btn btn-danger" ng-click="refresh()">My Location</button>
+        <button type="submit" class="btn btn-primary" ng-click="refresh()">My Location</button>
         <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
         <div class="form-group">
           <label for="bathroomName">Bathroom Name <span class="badge">All fields required</span></label>
@@ -34,21 +34,15 @@
             Female
           </label>
 
-
           <label class="radio-inline">
             <input type="radio" name="optionsRadios" id="radiounisex" value="Unisex" ng-model="formData.gender">
             Unisex
           </label>
 
         </div>
-
-
-
-          <label for="rating">Bathroom Rating</label>
-          <input type="number" id="rating" name="rating" ng-model="formData.rating" placeholder="Min: 1, max: 5" min="1" max="5" required>
-          <span class="validity"></span>
-
-
+        <label for="rating">Bathroom Rating</label>
+        <input class="form-control" type="number" id="rating" name="rating" ng-model="formData.rating" placeholder="Min: 1, max: 5" min="1" max="5" required>
+        <span class="validity"></span>
         <div hidden="false" class="form-group">
           <label for="latitude">Latitude</label>
           <input type="text" class="form-control" id="latitude" value="37.3351" ng-model="formData.latitude" readonly>
@@ -59,7 +53,7 @@
         </div>
 
         <!-- Submit button. Note that its tied to createUser() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
-        <button type="submit" class="btn btn-danger btn-block" ng-click="createUser()" ng-disabled="addForm.$invalid">Submit</button>
+        <button type="submit" class="btn btn-primary btn-block" ng-click="createUser()" ng-disabled="addForm.$invalid">Add</button>
       </form>
     </div>
   </div>
