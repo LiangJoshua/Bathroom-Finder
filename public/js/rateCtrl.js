@@ -4,6 +4,7 @@ rateCtrl.controller('rateCtrl', function($scope, $location, $log, $http, $rootSc
 
   // Initializes Variables
   // ----------------------------------------------------------------------------
+  $scope.$route = $route;
   $scope.formData = {};
   var lat = 0;
   var long = 0;
