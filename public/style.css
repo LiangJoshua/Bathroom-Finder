@@ -1,4 +1,4 @@
-/* Google Maps */
+/* Google Map! */
 #map {
   overflow: hidden;
   padding-bottom: 100%;
@@ -9,26 +9,6 @@
   height: 100%;
   width: 100%;
 }
-
-#iw-container {
-  margin-bottom: 10px;
-}
-
-#iw-container .iw-title {
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 22px;
-  font-weight: 700;
-  color: black;
-  margin: 0;
-  border-radius: 2px 2px 0 0;
-}
-
-
-.iw-subTitle {
-  font-size: 14px;
-}
-
-
 
 #responsivePanel {}
 
@@ -49,16 +29,5 @@ input:invalid+span:after {
 }
 
 .linkless {
-  text-decoration: none !important;
-}
-
-span.stars, span.stars span {
-    display: block;
-    background: url(stars.png) 0 -16px repeat-x;
-    width: 80px;
-    height: 16px;
-}
-
-span.stars span {
-    background-position: 0 0;
+  text-decoration: none;
 }
