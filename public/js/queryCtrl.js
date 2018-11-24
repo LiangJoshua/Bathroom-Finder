@@ -1,37 +1,21 @@
 // Creates the queryCtrl Module and Controller. Note that it depends on 'geolocation' and 'gservice' modules.
 var queryCtrl = angular.module('queryCtrl', ['geolocation', 'gservice']);
-queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geolocation, gservice) {
+queryCtrl.controller('queryCtrl', function($scope, $route, $log, $http, $rootScope, geolocation, gservice) {
 
   // Initializes Variables
   // ----------------------------------------------------------------------------
+  $scope.$route = $route;
   $scope.formData = {};
   var queryBody = {};
+  var lat = 0;
+  var long = 0;
+
+  // Sets initial coordinates to gservice initial coordinates (downtown SJ)
+  $scope.formData.latitude = parseFloat(gservice.clickLat);
+  $scope.formData.longitude = parseFloat(gservice.clickLong);
 
   // Functions
   // ----------------------------------------------------------------------------
-
-  // Get User's actual coordinates based on HTML5 at window load
-  geolocation.getLocation().then(function(data) {
-    coords = {
-      lat: data.coords.latitude,
-      long: data.coords.longitude
-    };
-
-    // Set the latitude and longitude equal to the HTML5 coordinates
-    $scope.formData.longitude = parseFloat(coords.long);
-    $scope.formData.latitude = parseFloat(coords.lat);
-  });
-
-  // Get coordinates based on mouse click. When a click event is detected....
-  $rootScope.$on("clicked", function() {
-
-    // Run the gservice functions associated with identifying coordinates
-    $scope.$apply(function() {
-      $scope.formData.latitude = parseFloat(gservice.clickLat);
-      $scope.formData.longitude = parseFloat(gservice.clickLong);
-    });
-  });
-
   // Function that refreshes Google Maps with user's current location
   $scope.refresh = function() {
     // Set initial coordinates to the downtown SJ
@@ -54,6 +38,16 @@ queryCtrl.controller('queryCtrl', function($scope, $log, $http, $rootScope, geol
       gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
     });
   };
+
+  // Get coordinates based on mouse click. When a click event is detected....
+  $rootScope.$on("clicked", function() {
+
+    // Run the gservice functions associated with identifying coordinates
+    $scope.$apply(function() {
+      $scope.formData.latitude = parseFloat(gservice.clickLat);
+      $scope.formData.longitude = parseFloat(gservice.clickLong);
+    });
+  });
 
 
   // Take query parameters and incorporate into a JSON queryBody
