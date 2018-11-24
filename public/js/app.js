@@ -8,11 +8,12 @@ var app = angular.module('meanMapApp', ['addCtrl', 'queryCtrl', 'rateCtrl', 'geo
     $routeProvider.when('/add', {
         controller: 'addCtrl',
         templateUrl: 'partials/addForm.html',
-
+        activetab: 'add'
         // Find Bathrooms Control Panel
       }).when('/find', {
         controller: 'queryCtrl',
         templateUrl: 'partials/queryForm.html',
+        activetab: 'find'
         // Rate Bathroom Control Panel
       }).when('/rate', {
         controller: 'rateCtrl',
