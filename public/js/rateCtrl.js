@@ -32,6 +32,7 @@ $scope.formData.bathroomName = $location.search().bathroomName;
 
       gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
     });
+    console.log("Test for my location in Rate Bathroom");
   };
 
   // Take query parameters and incorporate into a JSON queryBody
@@ -52,6 +53,8 @@ $scope.formData.bathroomName = $location.search().bathroomName;
         // Once complete, clear the form (except location)
         $scope.formData.bathroomName = "";
         $scope.formData.rating = "";
+
+        console.log("Your rating has been added succesfully");
 
         // Once complete, thank the user with alert notification
         alert('Thank you for Rating!')
