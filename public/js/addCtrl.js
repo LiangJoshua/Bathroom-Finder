@@ -86,6 +86,7 @@ addCtrl.controller('addCtrl', function($scope, $location, $route, $http, $rootSc
 
         // Refresh the map with new data
         gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
+        console.log("Page has been succesfully refreshed");
       })
       .error(function(data) {
         console.log('Error: ' + data);

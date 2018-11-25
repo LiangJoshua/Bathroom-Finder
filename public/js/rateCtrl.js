@@ -78,6 +78,7 @@ $scope.formData.bathroomName = $location.search().bathroomName;
           $scope.formData.latitude = parseFloat(coords.lat);
 
           gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
+          console.log("Page has been succesfully refreshed");
         });
       })
       .error(function(data) {
