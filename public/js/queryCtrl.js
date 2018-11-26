@@ -40,7 +40,10 @@ queryCtrl.controller('queryCtrl', function($scope, $location, $route, $log, $htt
       $scope.formData.latitude = parseFloat(coords.lat);
 
       gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
+
+      console.log("testing to current location for Find Bathroom Button");
     });
+
   };
 
   // Get coordinates based on mouse click. When a click event is detected....
@@ -50,6 +53,7 @@ queryCtrl.controller('queryCtrl', function($scope, $location, $route, $log, $htt
     $scope.$apply(function() {
       $scope.formData.latitude = parseFloat(gservice.clickLat);
       $scope.formData.longitude = parseFloat(gservice.clickLong);
+      console.log("getting coordinates when mouse clicked successful in Find Bathroom");
     });
   });
 
@@ -91,5 +95,7 @@ queryCtrl.controller('queryCtrl', function($scope, $location, $route, $log, $htt
       .error(function(queryResults) {
         console.log('Error ' + queryResults);
       })
+
+      console.log("Test when find button is clicked and outputs bathrooms"); 
   };
 });

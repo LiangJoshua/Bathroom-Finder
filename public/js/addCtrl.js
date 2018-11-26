@@ -40,18 +40,25 @@ addCtrl.controller('addCtrl', function($scope, $location, $route, $http, $rootSc
       $scope.formData.latitude = parseFloat(coords.lat);
 
       gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
+
+      
     });
+    console.log("Test for my location in Add Bathroom");
   };
 
 
   // Get coordinates based on mouse click. When a click event is detected....
   $rootScope.$on("clicked", function() {
 
+
     // Run the gservice functions associated with identifying coordinates
     $scope.$apply(function() {
       $scope.formData.latitude = parseFloat(gservice.clickLat);
       $scope.formData.longitude = parseFloat(gservice.clickLong);
+
     });
+
+     console.log("Test for browsing the map in Add Bathroom. Marker should turn blue");
   });
 
   // Creates a new user based on the form fields
@@ -67,6 +74,7 @@ addCtrl.controller('addCtrl', function($scope, $location, $route, $http, $rootSc
       location: [$scope.formData.longitude, $scope.formData.latitude]
     };
 
+    console.log("Bathroom: " + $scope.formData.bathroomName + "is added to the database successfully");
     // Saves the user data to the db
     $http.post('/users', userData)
       .success(function(data) {
@@ -78,6 +86,7 @@ addCtrl.controller('addCtrl', function($scope, $location, $route, $http, $rootSc
 
         // Refresh the map with new data
         gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
+        console.log("Page has been succesfully refreshed");
       })
       .error(function(data) {
         console.log('Error: ' + data);
