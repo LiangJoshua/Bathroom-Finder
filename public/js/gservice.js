@@ -170,7 +170,10 @@ angular.module('gservice', ['geolocation'])
         icon: '../images/red-dot.png'
       });
       lastMarker = marker;
-
+      // Update Broadcasted Variable (lets the panels know to change their lat, long values)
+      googleMapService.clickLat = marker.getPosition().lat();
+      googleMapService.clickLong = marker.getPosition().lng();
+      
       // Function for moving to a selected location
       map.panTo(new google.maps.LatLng(latitude, longitude));
 

@@ -7,13 +7,15 @@ addCtrl.controller('addCtrl', function($scope, $location, $route, $http, $rootSc
   $scope.formData = {};
   $scope.$route = $route;
   var coords = {};
-  var lat = 0;
-  var long = 0;
 
-  // Sets initial coordinates to gservice initial coordinates (downtown SJ)
+  // Sets coordinates if user clicks from #find view
   $scope.formData.latitude = parseFloat(gservice.clickLat);
   $scope.formData.longitude = parseFloat(gservice.clickLong);
 
+  if ($scope.formData.longitude == 0 && $scope.formData.latitude == 0) {
+    $scope.formData.latitude = 37.3351;
+    $scope.formData.longitude = -121.8929;
+  }
 
   // Functions
   // ----------------------------------------------------------------------------
@@ -58,7 +60,7 @@ addCtrl.controller('addCtrl', function($scope, $location, $route, $http, $rootSc
 
     });
 
-     console.log("Test for browsing the map in Add Bathroom. Marker should turn blue");
+    console.log("Test for browsing the map in Add Bathroom. Marker should turn blue");
   });
 
   // Creates a new user based on the form fields
