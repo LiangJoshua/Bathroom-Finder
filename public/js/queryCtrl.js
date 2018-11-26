@@ -11,10 +11,10 @@ queryCtrl.controller('queryCtrl', function($scope, $location, $route, $log, $htt
   var long = 0;
 
   // Sets initial coordinates to gservice initial coordinates (downtown SJ)
-  $scope.formData.latitude = 37.3351;
-    $scope.formData.longitude = -121.8929;
-  //$scope.formData.latitude = parseFloat(gservice.clickLat);
-  //$scope.formData.longitude = parseFloat(gservice.clickLong);
+    //$scope.formData.latitude = 37.3351;
+   // $scope.formData.longitude = -121.8929;
+  $scope.formData.latitude = parseFloat(gservice.clickLat);
+  $scope.formData.longitude = parseFloat(gservice.clickLong);
 
   // Functions
   // ----------------------------------------------------------------------------
