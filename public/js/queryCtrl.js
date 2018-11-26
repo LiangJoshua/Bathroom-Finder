@@ -11,6 +11,8 @@ queryCtrl.controller('queryCtrl', function($scope, $location, $route, $log, $htt
   var long = 0;
 
   // Sets initial coordinates to gservice initial coordinates (downtown SJ)
+    //$scope.formData.latitude = 37.3351;
+   // $scope.formData.longitude = -121.8929;
   $scope.formData.latitude = parseFloat(gservice.clickLat);
   $scope.formData.longitude = parseFloat(gservice.clickLong);
 
@@ -23,8 +25,7 @@ queryCtrl.controller('queryCtrl', function($scope, $location, $route, $log, $htt
   // Function that refreshes Google Maps with user's current location
   $scope.refresh = function() {
     // Set initial coordinates to the downtown SJ
-    // $scope.formData.latitude = 37.3351;
-    // $scope.formData.longitude = -121.8929;
+    
 
     geolocation.getLocation().then(function(data) {
 
