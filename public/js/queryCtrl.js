@@ -96,6 +96,6 @@ queryCtrl.controller('queryCtrl', function($scope, $location, $route, $log, $htt
         console.log('Error ' + queryResults);
       })
 
-      console.log("Test when find button is clicked and outputs bathrooms"); 
+      console.log("Test when find button is clicked and outputs bathrooms");
   };
 });

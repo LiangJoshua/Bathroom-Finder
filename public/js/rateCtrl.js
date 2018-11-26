@@ -6,16 +6,13 @@ rateCtrl.controller('rateCtrl', function($scope, $location, $log, $http, $rootSc
   // ----------------------------------------------------------------------------
   $scope.$route = $route;
   $scope.formData = {};
-  var lat = 0;
-  var long = 0;
+
 
 $scope.formData.bathroomName = $location.search().bathroomName;
 
   // Function that refreshes Google Maps with user's current location
   $scope.refresh = function() {
-    // Set initial coordinates to the downtown SJ
-    // $scope.formData.latitude = 37.3351;
-    // $scope.formData.longitude = -121.8929;
+
 
     geolocation.getLocation().then(function(data) {
 

@@ -41,7 +41,7 @@ addCtrl.controller('addCtrl', function($scope, $location, $route, $http, $rootSc
 
       gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
 
-      
+
     });
     console.log("Test for my location in Add Bathroom");
   };
